@@ -2,11 +2,11 @@
 layout: home
 
 hero:
-  name: WebFront
-  tagline: 致力于整合前端面。
+  name: ZANTOP
+  tagline: 一切成功均源自积累!
   image:
-    src: /banner.jpeg
-    alt: VitePress
+    # src: /banner.jpeg
+    # alt: VitePress
   actions:
     - theme: brand
       text: Get Started
