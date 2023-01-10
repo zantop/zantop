@@ -1,145 +1,183 @@
-import { defineConfig } from 'vitepress'
+import { defineConfig } from "vitepress";
 
 export default defineConfig({
-  lang: 'en-US',
-  title: 'VitePress',
-  description: 'Vite & Vue powered static site generator.',
-
+  lang: "en-US",
+  title: "ZANTOP",
+  description: "一切成功均源自积累!",
   lastUpdated: true,
-  cleanUrls: 'without-subfolders',
-  base: '',
+  cleanUrls: "without-subfolders",
+  base: "",
 
   themeConfig: {
     nav: nav(),
 
     sidebar: {
-      '/guide/': sidebarGuide(),
-      '/config/': sidebarConfig()
+      "/front/js": jsConfig(),
+      "/front/css": cssConfig(),
+      "/end/": sidebarConfig(),
+      "/site/": siteConfig(),
+      "/frame/": frameConfig(),
+      "/my/": myConfig(),
+      "/other/": otherConfig(),
     },
-
-    editLink: {
-      pattern: 'https://github.com/process1024/vitepress/edit/main/docs/:path',
-      text: '在 github 上编辑此页'
-    },
-
-    socialLinks: [
-      { icon: 'github', link: 'https://github.com/process1024/vitepress' }
-    ],
-
-    footer: {
-      message: 'Released under the MIT License.',
-      copyright: 'Copyright © 2019-present Evan You'
-    },
-
+    // footer: {},
     algolia: {
-      appId: '8J64VVRP8K',
-      apiKey: 'a18e2f4cc5665f6602c5631fd868adfd',
-      indexName: 'vitepress'
+      appId: "8J64VVRP8K",
+      apiKey: "a18e2f4cc5665f6602c5631fd868adfd",
+      indexName: "vitepress",
     },
 
-    carbonAds: {
-      code: 'CEBDT27Y',
-      placement: 'vuejsorg'
-    },
-
-    lastUpdatedText: '最后更新',
-
+    lastUpdatedText: "最后更新",
     docFooter: {
-      prev: '上一页',
-      next: '下一页'
+      prev: "上一页",
+      next: "下一页",
     },
-    outlineTitle: '这一页'
-  }
-})
+    outlineTitle: "这一页",
+  },
+});
 
 function nav() {
   return [
-    { text: '指南', link: '/guide/what-is-vitepress', activeMatch: '/guide/' },
-    { text: '配置', link: '/config/introduction', activeMatch: '/config/' },
     {
-      text: 1.0,
+      text: "前端",
       items: [
-        {
-          text: 'Changelog',
-          link: 'https://github.com/vuejs/vitepress/blob/main/CHANGELOG.md'
-        },
-        {
-          text: 'Contributing',
-          link: 'https://github.com/vuejs/vitepress/blob/main/.github/contributing.md'
-        }
-      ]
-    }
-  ]
+        { text: "javascript", link: "/front/js/数组方法" },
+        { text: "css", link: "/front/css/flex布局" },
+      ],
+    },
+    { text: "后端", link: "/end/node/nestjs实践教程", activeMatch: "/end/" },
+    { text: "框架", link: "/frame/react/redux的实现", activeMatch: "/frame/" },
+    { text: "站点", link: "/site/常用", activeMatch: "/site/" },
+    { text: "我的", link: "/my/常用", activeMatch: "/site/" },
+    { text: "其他", link: "/other/interview/面试集合", activeMatch: "/other/" },
+  ];
 }
 
-function sidebarGuide() {
+function jsConfig() {
   return [
     {
-      text: '介绍',
+      text: "基础",
       collapsible: true,
       items: [
-        { text: '什么是VitePress?', link: '/guide/what-is-vitepress' },
-        { text: '快速上手', link: '/guide/getting-started' },
-        { text: '配置', link: '/guide/configuration' },
-        { text: '部署', link: '/guide/deploying' }
-      ]
+        { text: "数组方法", link: "/front/js/数组方法" },
+        { text: "字符串方法", link: "/front/js/字符串方法" },
+        { text: "函数节流和防抖", link: "/front/js/函数节流和防抖" },
+      ],
     },
     {
-      text: '编写',
+      text: "高级",
       collapsible: true,
       items: [
-        { text: 'Markdown', link: '/guide/markdown' },
-        { text: '静态资源', link: '/guide/asset-handling' },
-        { text: 'Frontmatter', link: '/guide/frontmatter' },
-        { text: '在Markdown中使用Vue', link: '/guide/using-vue' },
-        { text: 'API参考', link: '/guide/api' }
-      ]
+        { text: "浏览器原理和V8引擎", link: "/front/js/浏览器原理和V8引擎" },
+        { text: "作用域", link: "/front/js/作用域" },
+      ],
     },
-    {
-      text: '主题',
-      collapsible: true,
-      items: [
-        { text: '介绍', link: '/guide/theme-introduction' },
-        { text: '导航栏', link: '/guide/theme-nav' },
-        { text: '侧边栏', link: '/guide/theme-sidebar' },
-        { text: '上下页链接', link: '/guide/theme-prev-next-link' },
-        { text: '编辑链接', link: '/guide/theme-edit-link' },
-        { text: '最后更新时间', link: '/guide/theme-last-updated' },
-        { text: '布局', link: '/guide/theme-layout' },
-        { text: '首页', link: '/guide/theme-home-page' },
-        { text: '团队页面', link: '/guide/theme-team-page' },
-        { text: '页脚', link: '/guide/theme-footer' },
-        { text: '搜索', link: '/guide/theme-search' },
-        { text: 'Carbon Ads', link: '/guide/theme-carbon-ads' }
-      ]
-    },
-    {
-      text: '迁移',
-      collapsible: true,
-      items: [
-        {
-          text: '从 VuePress 迁移',
-          link: '/guide/migration-from-vuepress'
-        },
-        {
-          text: '从 VitePress 0.x 迁移',
-          link: '/guide/migration-from-vitepress-0'
-        }
-      ]
-    }
-  ]
+  ];
 }
-
+function cssConfig() {
+  return [
+    {
+      text: "基础",
+      collapsible: true,
+      items: [
+        { text: "flex布局", link: "/front/css/flex布局" },
+        { text: "移动端适配解决方案", link: "/front/css/移动端适配解决方案" },
+      ],
+    },
+  ];
+}
 function sidebarConfig() {
   return [
     {
-      text: '配置',
+      text: "node",
+      collapsible: true,
       items: [
-        { text: '介绍', link: '/config/introduction' },
-        { text: '应用配置', link: '/config/app-configs' },
-        { text: '主题配置', link: '/config/theme-configs' },
-        { text: 'Frontmatter 配置', link: '/config/frontmatter-configs' }
-      ]
-    }
-  ]
+        { text: "nestjs实践教程", link: "/end/node/nestjs实践教程" },
+        { text: "node搭建cli", link: "/end/node/node搭建cli" },
+        { text: "koa2笔记", link: "/end/node/koa2笔记" },
+        { text: "egg.js笔记", link: "/end/node/egg.js笔记" },
+        { text: "nodebb搭建论坛", link: "/end/node/nodebb搭建论坛" },
+        { text: "nodejs爬虫彩票数据", link: "/end/node/nodejs爬虫彩票数据" },
+        { text: "nvm管理多版本node", link: "/end/node/nvm管理多版本node" },
+        { text: "微信小程序支付", link: "/end/node/微信小程序支付" },
+        { text: "微信小程序模板消息", link: "/end/node/微信小程序模板消息" },
+        { text: "定时任务", link: "/end/node/定时任务" },
+        { text: "腾讯云服务器部署nodejs项目", link: "/end/node/腾讯云服务器部署nodejs项目" },
+      ],
+    },
+    {
+      text: "数据库",
+      collapsible: true,
+      items: [
+        { text: "mongoose", link: "/end/database/mongoose" },
+        { text: "mongodb备份与恢复", link: "/end/database/mongodb备份与恢复" },
+      ],
+    },
+  ];
+}
+
+function siteConfig() {
+  return [
+    {
+      text: "站点",
+      collapsible: true,
+      items: [
+        { text: "常用", link: "/site/常用" },
+        { text: "收藏", link: "/site/收藏" },
+      ],
+    },
+  ];
+}
+function frameConfig() {
+  return [
+    {
+      text: "React",
+      collapsible: true,
+      items: [
+        { text: "redux的实现", link: "/frame/react/redux的实现" },
+        { text: "redux的应用", link: "/frame/react/redux的应用" },
+        { text: "redux-thunk解析", link: "/frame/react/redux-thunk解析" },
+        { text: "redux-saga解析", link: "/frame/react/redux-saga解析" },
+        { text: "事件传参", link: "/frame/react/事件传参" },
+        { text: "hooks", link: "/frame/react/hooks" },
+      ],
+    },
+    {
+      text: "vue",
+      collapsible: true,
+      items: [{ text: "vuex状态管理", link: "/frame/vue/vuex状态管理" }],
+    },
+    {
+      text: "flutter",
+      collapsible: true,
+      items: [{ text: "基础", link: "/frame/flutter/基础" }],
+    },
+  ];
+}
+
+function otherConfig() {
+  return [
+    {
+      text: "面试",
+      collapsible: true,
+      items: [{ text: "面试集合", link: "/other/interview/面试集合" }],
+    },
+  ];
+}
+
+function myConfig() {
+  return [
+    {
+      text: "React",
+      collapsible: true,
+      items: [
+        { text: "redux的实现", link: "/frame/react/redux的实现" },
+        { text: "redux的应用", link: "/frame/react/redux的应用" },
+        { text: "redux-thunk解析", link: "/frame/react/redux-thunk解析" },
+        { text: "redux-saga解析", link: "/frame/react/redux-saga解析" },
+        { text: "事件传参", link: "/frame/react/事件传参" },
+        { text: "hooks", link: "/frame/react/hooks" },
+      ],
+    },
+  ];
 }

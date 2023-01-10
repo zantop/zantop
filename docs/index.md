@@ -1,24 +1,27 @@
 ---
 layout: home
 
+title: 首页
+
 hero:
   name: ZANTOP
+  text: 
   tagline: 一切成功均源自积累!
-  image:
-    # src: /banner.jpeg
-    # alt: VitePress
+  # image:
+  #   src: /pure-logo.png
+  #   alt: logo
   actions:
     - theme: brand
-      text: Get Started
-      link: /eight-part-essay/internet-questions
-
-features:
-  - title: Vue
-    details: 渐进式的JavaScript 框架.
-  - title: React
-    details: 用于构建用户界面的 JavaScript 库
-  - title: 工程化
-    details: 前端工程化是根据具体的业务特点，将前端的开发流程、技术、工具、经验等规范化、标准化。
-  - title: Node
-    details: Node.js 是一个基于Chrome V8 引擎的JavaScript 运行环境。
+      text: 点击开始
+      link: /front/js/数组方法
+# features:
+#   - icon: ⚡️
+#     title: 记录知识
+#     details: 
+#   - icon: 🖖
+#     title: 技术文章
+#     details: 
+#   - icon: 🛠️
+#     title: 个人
+#     details: 
 ---

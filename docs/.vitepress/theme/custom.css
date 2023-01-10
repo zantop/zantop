@@ -1,4 +1,59 @@
+.VPHero .container .main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#app .VPContent:after {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: .8;
+  pointer-events: none;
+  background: url('https://gw.alipayobjects.com/zos/bmw-prod/a6c3488a-994c-4dd3-8e92-2324d9a1ca48/l9dmd9wl_w2858_h1864.png') no-repeat center / cover;
+  background-size: 1300px 1200px;
+}
+
+@media (min-width: 960px) {
+  #app .VPHero {
+    display: flex;
+    align-items: center;
+    padding: calc(var(--vp-nav-height) + var(--vp-layout-top-height, 0px) + 80px) 64px 64px;
+    height: calc(100vh - var(--vp-nav-height) - var(--vp-layout-top-height, 0px) - 200px);
+  }
+}
+
+/* 
+@media (max-width: 960px) {
+  #app .image {
+      margin-top: -75px;
+  }
+
+  #app .VPHomeHero {
+      margin-bottom: 5px;
+
+  }
+} */
+/**
+ * Colors
+ * -------------------------------------------------------------------------- */
+
 :root {
-  /* --vp-c-green: #646cff;
-  --vp-c-green-light: #747bff; */
+  --vp-c-green: #6666FF;
+  --vp-c-green-light: #6666FF;
+  --vp-c-brand: #6666FF;
+  /* --vp-c-brand-light: #c880f9;
+  --vp-c-brand-lighter: #9499ff;
+  --vp-c-brand-lightest: #bcc0ff;
+  --vp-c-brand-dark: #c880f9;
+  --vp-c-brand-darker: #945fb9;
+  --vp-c-brand-dimm: rgba(100, 108, 255, 0.08);
+
+  --vp-nav-height-mobile: 56px;
+  --vp-nav-height-desktop: 65px;
+  --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #bd34fe 30%, #41d1ff); */
 }
