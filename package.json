@@ -1,0 +1,17 @@
+{
+  "name": "docs",
+  "version": "1.0.0",
+  "description": "记录",
+  "main": "index.js",
+  "author": "",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "dp": "bash deploy.sh"
+  },
+  "devDependencies": {
+    "vitepress": "^1.0.0-alpha.35",
+    "vue": "^3.2.45"
+  }
+}
