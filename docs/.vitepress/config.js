@@ -2,7 +2,7 @@ import { defineConfig } from "vitepress";
 import side from "./side";
 const path = require("path");
 const docsRoot = path.join(__dirname, "..", "..", "docs"); // docs文件路径
-console.log("目录", docsRoot, side(docsRoot + "/front/eng"));
+// console.log("目录", docsRoot, side(docsRoot + "/front/eng"));
 
 const js = [
   ["基础,", "/front/js", "数组方法", "字符串方法", "函数节流和防抖"],
@@ -62,7 +62,6 @@ const node = [
     "/end/node",
     "nestjs实践教程",
     "node搭建cli",
-    "koa2笔记",
     "egg.js笔记",
     "nodebb搭建论坛",
     "nodejs爬虫彩票数据",

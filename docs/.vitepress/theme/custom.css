@@ -3,7 +3,9 @@
   flex-direction: column;
   align-items: center;
 }
-
+.vp-doc a:hover{
+    
+}
 #app .is-home:after {
   content: "";
   position: absolute;
@@ -46,6 +48,8 @@
   --vp-c-green: #6666FF;
   --vp-c-green-light: #6666FF;
   --vp-c-brand: #6666FF;
+  --vp-c-brand-dark:#FF6600;
+  
   /* --vp-c-brand-light: #c880f9;
   --vp-c-brand-lighter: #9499ff;
   --vp-c-brand-lightest: #bcc0ff;
@@ -56,4 +60,25 @@
   --vp-nav-height-mobile: 56px;
   --vp-nav-height-desktop: 65px;
   --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #bd34fe 30%, #41d1ff); */
+}
+
+::-webkit-scrollbar-track-piece {
+  -webkit-border-radius: 0
+}
+::-webkit-scrollbar {
+  width: 5px;
+  height: 10px
+}
+::-webkit-scrollbar-thumb {
+  background-color: #b8b8b8;
+  -webkit-border-radius: 6px;
+  outline-offset: -2px;
+  filter: alpha(opacity = 50);
+  -moz-opacity: 0.5;
+  -khtml-opacity: 0.5;
+  opacity: 0.5
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #878987;
+  -webkit-border-radius: 6px
 }
