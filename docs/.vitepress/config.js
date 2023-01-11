@@ -2,7 +2,7 @@ import { defineConfig } from "vitepress";
 import side from "./side";
 const path = require("path");
 const docsRoot = path.join(__dirname, "..", "..", "docs"); // docs文件路径
-console.log("目录", docsRoot, side(docsRoot + "/front/ts"));
+console.log("目录", docsRoot, side(docsRoot + "/front/eng"));
 
 const js = [
   ["基础,", "/front/js", "数组方法", "字符串方法", "函数节流和防抖"],
@@ -40,6 +40,22 @@ const ts = [
   ],
 ];
 const css = [["基础", "/front/css", "flex布局", "移动端适配解决方案"]];
+const eng = [
+  [
+    "npm",
+    "/front/eng",
+    "git提交规范",
+    "git自动化部署项目",
+    "npm相关",
+    "nrm 使用",
+    "packagejson详解",
+    "tsrollup搭建工具库",
+    "代码规范配置",
+    "基于lerna管理packages ",
+    "搭建npm私仓库",
+    "设计颜色值",
+  ],
+];
 const node = [
   [
     "node",
@@ -55,8 +71,21 @@ const node = [
     "微信小程序模板消息",
     "定时任务",
     "腾讯云服务器部署nodejs项目",
+    "配置ssh连接服务器",
   ],
   ["数据库", "/end/database", "mongoose", "mongodb备份与恢复"],
+  [
+    "服务器",
+    "/end/os",
+    "centos操作",
+    "centos问题总结",
+    "docker虚拟化技术",
+    "Linux下安装Git",
+    "linux和centos中chmod命令",
+    "Mac与vim日常命令",
+    "Mac相关",
+    "ngnix配置记录",
+  ],
 ];
 const site = [["站点", "/site", "常用", "收藏"]];
 const frame = [
@@ -73,7 +102,10 @@ const frame = [
   ["Vue", "/frame/vue", "vuex状态管理"],
   ["Flutter", "/frame/flutter", "基础"],
 ];
-const other = [["面试", "/other/interview", "面试集合"]];
+const other = [
+  ["读书", "/other/read", "技术管理36讲"],
+  ["面试", "/other/interview", "面试集合"],
+];
 const my = [["关于", "/my", "关于"]];
 
 export default defineConfig({
@@ -91,6 +123,7 @@ export default defineConfig({
       "/front/js": sbconfig(js),
       "/front/ts": sbconfig(ts),
       "/front/css": sbconfig(css),
+      "/front/eng": sbconfig(eng),
       "/end/": sbconfig(node),
       "/site/": sbconfig(site),
       "/frame/": sbconfig(frame),
@@ -121,21 +154,23 @@ function nav() {
         {
           text: "javascript",
           link: "/front/js/数组方法",
-          activeMatch: "/front/js",
         },
         {
           text: "typescript",
           link: "/front/ts/初识篇",
-          activeMatch: "/front/ts",
         },
-        { text: "css", link: "/front/css/flex布局", activeMatch: "/front/css" },
+        { text: "css", link: "/front/css/flex布局" },
+        {
+          text: "工程化",
+          link: "/front/eng/git提交规范",
+        },
       ],
     },
-    { text: "后端", link: "/end/node/nestjs实践教程", activeMatch: "/end/" },
-    { text: "框架", link: "/frame/react/redux的实现", activeMatch: "/frame/" },
-    { text: "站点", link: "/site/常用", activeMatch: "/site/" },
-    { text: "我的", link: "/my/关于", activeMatch: "/my/" },
-    { text: "其他", link: "/other/interview/面试集合", activeMatch: "/other/" },
+    { text: "后端", link: "/end/node/nestjs实践教程" },
+    { text: "框架", link: "/frame/react/redux的实现" },
+    { text: "站点", link: "/site/常用" },
+    { text: "我的", link: "/my/关于" },
+    { text: "其他", link: "/other/read/技术管理36讲" },
   ];
 }
 
