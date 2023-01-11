@@ -1,4 +1,80 @@
 import { defineConfig } from "vitepress";
+import side from "./side";
+const path = require("path");
+const docsRoot = path.join(__dirname, "..", "..", "docs"); // docs文件路径
+console.log("目录", docsRoot, side(docsRoot + "/front/ts"));
+
+const js = [
+  ["基础,", "/front/js", "数组方法", "字符串方法", "函数节流和防抖"],
+  ["高级", "/front/js", "浏览器原理和V8引擎", "作用域"],
+];
+const ts = [
+  [
+    "基础,",
+    "/front/ts",
+    "初识篇",
+    "基础篇-三斜线指令",
+    "基础篇-函数",
+    "基础篇-声明合并",
+    "基础篇-声明文件",
+    "基础篇-接口",
+    "基础篇-数据类型",
+    "基础篇-模块和命名空间",
+    "基础篇-泛型",
+    "基础篇-类",
+    "基础篇-装饰器",
+    "基础篇-高级类型",
+  ],
+  [
+    "高级",
+    "/front/ts",
+    "实战篇react与组件类型",
+    "实战篇react环境搭建",
+    "实战篇ts-eslint",
+    "实战篇vue与组件类型",
+    "实战篇vue环境搭建",
+    "工程篇",
+    "文章",
+    "进阶篇-工具函数库",
+    "配置篇",
+  ],
+];
+const css = [["基础", "/front/css", "flex布局", "移动端适配解决方案"]];
+const node = [
+  [
+    "node",
+    "/end/node",
+    "nestjs实践教程",
+    "node搭建cli",
+    "koa2笔记",
+    "egg.js笔记",
+    "nodebb搭建论坛",
+    "nodejs爬虫彩票数据",
+    "nvm管理多版本node",
+    "微信小程序支付",
+    "微信小程序模板消息",
+    "定时任务",
+    "腾讯云服务器部署nodejs项目",
+  ],
+  ["数据库", "/end/database", "mongoose", "mongodb备份与恢复"],
+];
+const site = [["站点", "/site", "常用", "收藏"]];
+const frame = [
+  [
+    "React",
+    "/frame/react",
+    "redux的实现",
+    "redux的应用",
+    "redux-thunk解析",
+    "redux-saga解析",
+    "事件传参",
+    "hooks",
+  ],
+  ["Vue", "/frame/vue", "vuex状态管理"],
+  ["Flutter", "/frame/flutter", "基础"],
+];
+const other = [["面试", "/other/interview", "面试集合"]];
+const my = [["关于", "/my", "关于"]];
 
 export default defineConfig({
   lang: "en-US",
@@ -12,13 +88,14 @@ export default defineConfig({
     nav: nav(),
 
     sidebar: {
-      "/front/js": jsConfig(),
-      "/front/css": cssConfig(),
-      "/end/": sidebarConfig(),
-      "/site/": siteConfig(),
-      "/frame/": frameConfig(),
-      "/my/": myConfig(),
-      "/other/": otherConfig(),
+      "/front/js": sbconfig(js),
+      "/front/ts": sbconfig(ts),
+      "/front/css": sbconfig(css),
+      "/end/": sbconfig(node),
+      "/site/": sbconfig(site),
+      "/frame/": sbconfig(frame),
+      "/my/": sbconfig(my),
+      "/other/": sbconfig(other),
     },
     // footer: {},
     algolia: {
@@ -41,143 +118,46 @@ function nav() {
     {
       text: "前端",
       items: [
-        { text: "javascript", link: "/front/js/数组方法" },
-        { text: "css", link: "/front/css/flex布局" },
+        {
+          text: "javascript",
+          link: "/front/js/数组方法",
+          activeMatch: "/front/js",
+        },
+        {
+          text: "typescript",
+          link: "/front/ts/初识篇",
+          activeMatch: "/front/ts",
+        },
+        { text: "css", link: "/front/css/flex布局", activeMatch: "/front/css" },
       ],
     },
     { text: "后端", link: "/end/node/nestjs实践教程", activeMatch: "/end/" },
     { text: "框架", link: "/frame/react/redux的实现", activeMatch: "/frame/" },
     { text: "站点", link: "/site/常用", activeMatch: "/site/" },
-    { text: "我的", link: "/my/常用", activeMatch: "/site/" },
+    { text: "我的", link: "/my/关于", activeMatch: "/my/" },
     { text: "其他", link: "/other/interview/面试集合", activeMatch: "/other/" },
   ];
 }
 
-function jsConfig() {
-  return [
-    {
-      text: "基础",
-      collapsible: true,
-      items: [
-        { text: "数组方法", link: "/front/js/数组方法" },
-        { text: "字符串方法", link: "/front/js/字符串方法" },
-        { text: "函数节流和防抖", link: "/front/js/函数节流和防抖" },
-      ],
-    },
-    {
-      text: "高级",
-      collapsible: true,
-      items: [
-        { text: "浏览器原理和V8引擎", link: "/front/js/浏览器原理和V8引擎" },
-        { text: "作用域", link: "/front/js/作用域" },
-      ],
-    },
-  ];
+function sbconfig(side) {
+  return createConfig(side);
 }
-function cssConfig() {
-  return [
-    {
-      text: "基础",
-      collapsible: true,
-      items: [
-        { text: "flex布局", link: "/front/css/flex布局" },
-        { text: "移动端适配解决方案", link: "/front/css/移动端适配解决方案" },
-      ],
-    },
-  ];
-}
-function sidebarConfig() {
-  return [
-    {
-      text: "node",
-      collapsible: true,
-      items: [
-        { text: "nestjs实践教程", link: "/end/node/nestjs实践教程" },
-        { text: "node搭建cli", link: "/end/node/node搭建cli" },
-        { text: "koa2笔记", link: "/end/node/koa2笔记" },
-        { text: "egg.js笔记", link: "/end/node/egg.js笔记" },
-        { text: "nodebb搭建论坛", link: "/end/node/nodebb搭建论坛" },
-        { text: "nodejs爬虫彩票数据", link: "/end/node/nodejs爬虫彩票数据" },
-        { text: "nvm管理多版本node", link: "/end/node/nvm管理多版本node" },
-        { text: "微信小程序支付", link: "/end/node/微信小程序支付" },
-        { text: "微信小程序模板消息", link: "/end/node/微信小程序模板消息" },
-        { text: "定时任务", link: "/end/node/定时任务" },
-        { text: "腾讯云服务器部署nodejs项目", link: "/end/node/腾讯云服务器部署nodejs项目" },
-      ],
-    },
-    {
-      text: "数据库",
-      collapsible: true,
-      items: [
-        { text: "mongoose", link: "/end/database/mongoose" },
-        { text: "mongodb备份与恢复", link: "/end/database/mongodb备份与恢复" },
-      ],
-    },
-  ];
-}
-
-function siteConfig() {
-  return [
-    {
-      text: "站点",
-      collapsible: true,
-      items: [
-        { text: "常用", link: "/site/常用" },
-        { text: "收藏", link: "/site/收藏" },
-      ],
-    },
-  ];
-}
-function frameConfig() {
-  return [
-    {
-      text: "React",
-      collapsible: true,
-      items: [
-        { text: "redux的实现", link: "/frame/react/redux的实现" },
-        { text: "redux的应用", link: "/frame/react/redux的应用" },
-        { text: "redux-thunk解析", link: "/frame/react/redux-thunk解析" },
-        { text: "redux-saga解析", link: "/frame/react/redux-saga解析" },
-        { text: "事件传参", link: "/frame/react/事件传参" },
-        { text: "hooks", link: "/frame/react/hooks" },
-      ],
-    },
-    {
-      text: "vue",
-      collapsible: true,
-      items: [{ text: "vuex状态管理", link: "/frame/vue/vuex状态管理" }],
-    },
-    {
-      text: "flutter",
-      collapsible: true,
-      items: [{ text: "基础", link: "/frame/flutter/基础" }],
-    },
-  ];
-}
-
-function otherConfig() {
-  return [
-    {
-      text: "面试",
-      collapsible: true,
-      items: [{ text: "面试集合", link: "/other/interview/面试集合" }],
-    },
-  ];
-}
-
-function myConfig() {
-  return [
-    {
-      text: "React",
-      collapsible: true,
-      items: [
-        { text: "redux的实现", link: "/frame/react/redux的实现" },
-        { text: "redux的应用", link: "/frame/react/redux的应用" },
-        { text: "redux-thunk解析", link: "/frame/react/redux-thunk解析" },
-        { text: "redux-saga解析", link: "/frame/react/redux-saga解析" },
-        { text: "事件传参", link: "/frame/react/事件传参" },
-        { text: "hooks", link: "/frame/react/hooks" },
-      ],
-    },
-  ];
+function createConfig(arr = []) {
+  let arrTemp = [];
+  arr.forEach((item) => {
+    let items = [];
+    if (Array.isArray(item)) {
+      const arrOp = item.filter((m, n) => n > 1);
+      const url = item[1];
+      arrOp.forEach((el) => {
+        items.push({ text: el, link: `${url}/${el}` });
+      });
+      arrTemp.push({
+        text: item[0],
+        collapsible: true,
+        items,
+      });
+    }
+  });
+  return arrTemp;
 }

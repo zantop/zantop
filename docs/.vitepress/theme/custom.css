@@ -4,7 +4,7 @@
   align-items: center;
 }
 
-#app .VPContent:after {
+#app .is-home:after {
   content: "";
   position: absolute;
   display: block;

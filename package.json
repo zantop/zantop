@@ -11,6 +11,7 @@
     "dp": "bash deploy.sh"
   },
   "devDependencies": {
+    "chalk": "^5.2.0",
     "vitepress": "^1.0.0-alpha.35",
     "vue": "^3.2.45"
   }
