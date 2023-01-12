@@ -102,7 +102,7 @@ const frame = [
   ["Flutter", "/frame/flutter", "基础"],
 ];
 const other = [
-  ["读书", "/other/read", "技术管理36讲"],
+  ["读书", "/other/read", "技术管理36讲","技术人的管理之路","10人以下小团队管理手册"],
   ["面试", "/other/interview", "面试集合"],
 ];
 const my = [["关于", "/my", "关于"]];
