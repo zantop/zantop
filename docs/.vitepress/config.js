@@ -6,7 +6,7 @@ const docsRoot = path.join(__dirname, "..", "..", "docs"); // docs文件路径
 
 const js = [
   ["基础,", "/front/js", "数组方法", "字符串方法", "函数节流和防抖"],
-  ["高级", "/front/js", "浏览器原理和V8引擎", "作用域"],
+  ["高级", "/front/js", "浏览器工作原理和V8引擎", "作用域"],
 ];
 const ts = [
   [
@@ -87,7 +87,7 @@ const node = [
   ],
 ];
 const site = [["站点", "/site", "常用", "收藏"]];
-const frame = [
+const react = [
   [
     "React",
     "/frame/react",
@@ -98,11 +98,17 @@ const frame = [
     "事件传参",
     "hooks",
   ],
-  ["Vue", "/frame/vue", "vuex状态管理"],
-  ["Flutter", "/frame/flutter", "基础"],
 ];
+const vue = [["Vue", "/frame/vue", "vuex状态管理"]];
+const flutter = [["Flutter", "/frame/flutter", "基础"]];
 const other = [
-  ["读书", "/other/read", "技术管理36讲","技术人的管理之路","10人以下小团队管理手册"],
+  [
+    "读书",
+    "/other/read",
+    "技术管理36讲",
+    "技术人的管理之路",
+    "10人以下小团队管理手册",
+  ],
   ["面试", "/other/interview", "面试集合"],
 ];
 const my = [["关于", "/my", "关于"]];
@@ -125,11 +131,12 @@ export default defineConfig({
       "/front/eng": sbconfig(eng),
       "/end/": sbconfig(node),
       "/site/": sbconfig(site),
-      "/frame/": sbconfig(frame),
+      "/frame/react": sbconfig(react),
+      "/frame/vue": sbconfig(vue),
+      "/frame/flutter": sbconfig(flutter),
       "/my/": sbconfig(my),
       "/other/": sbconfig(other),
     },
-    // footer: {},
     algolia: {
       appId: "8J64VVRP8K",
       apiKey: "a18e2f4cc5665f6602c5631fd868adfd",
@@ -141,7 +148,7 @@ export default defineConfig({
       prev: "上一页",
       next: "下一页",
     },
-    outlineTitle: "这一页",
+    outlineTitle: "目录",
   },
 });
 
@@ -166,7 +173,23 @@ function nav() {
       ],
     },
     { text: "后端", link: "/end/node/nestjs实践教程" },
-    { text: "框架", link: "/frame/react/redux的实现" },
+    {
+      text: "框架",
+      items: [
+        {
+          text: "react",
+          link: "/frame/react/redux的实现",
+        },
+        {
+          text: "vue",
+          link: "/frame/vue/vuex状态管理",
+        },
+        {
+          text: "flutter",
+          link: "/frame/flutter/基础",
+        },
+      ],
+    },
     { text: "站点", link: "/site/常用" },
     { text: "我的", link: "/my/关于" },
     { text: "其他", link: "/other/read/技术管理36讲" },
