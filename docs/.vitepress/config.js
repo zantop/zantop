@@ -4,6 +4,7 @@ const path = require("path");
 const docsRoot = path.join(__dirname, "..", "..", "docs"); // docs文件路径
 // console.log("目录", docsRoot, side(docsRoot + "/front/eng"));
 
+// -------------------- 前端 -------------------------------
 const js = [
   ["基础,", "/front/js", "数组方法", "字符串方法", "函数节流和防抖"],
   ["高级", "/front/js", "浏览器工作原理和V8引擎", "作用域"],
@@ -56,6 +57,9 @@ const eng = [
     "设计颜色值",
   ],
 ];
+
+//-------------------- 后端 -------------------------------
+
 const node = [
   [
     "node",
@@ -72,7 +76,9 @@ const node = [
     "腾讯云服务器部署nodejs项目",
     "配置ssh连接服务器",
   ],
-  ["数据库", "/end/database", "mongoose", "mongodb备份与恢复"],
+];
+const database = [["数据库", "/end/database", "mongoose", "mongodb备份与恢复"]];
+const os = [
   [
     "服务器",
     "/end/os",
@@ -86,7 +92,9 @@ const node = [
     "ngnix配置记录",
   ],
 ];
-const site = [["站点", "/site", "常用", "收藏"]];
+
+//-------------------- 框架 -------------------------------
+
 const react = [
   [
     "React",
@@ -101,6 +109,14 @@ const react = [
 ];
 const vue = [["Vue", "/frame/vue", "vuex状态管理"]];
 const flutter = [["Flutter", "/frame/flutter", "基础"]];
+
+//-------------------- 站点 -------------------------------
+const site = [["站点", "/site", "常用", "收藏"]];
+
+//-------------------- 我的 -------------------------------
+const my = [["关于", "/my", "关于"]];
+
+//-------------------- 其他 -------------------------------
 const other = [
   [
     "读书",
@@ -111,7 +127,6 @@ const other = [
   ],
   ["面试", "/other/interview", "面试集合"],
 ];
-const my = [["关于", "/my", "关于"]];
 
 export default defineConfig({
   lang: "en-US",
@@ -129,7 +144,9 @@ export default defineConfig({
       "/front/ts": sbconfig(ts),
       "/front/css": sbconfig(css),
       "/front/eng": sbconfig(eng),
-      "/end/": sbconfig(node),
+      "/end/node": sbconfig(node),
+      "/end/database": sbconfig(database),
+      "/end/os": sbconfig(os),
       "/site/": sbconfig(site),
       "/frame/react": sbconfig(react),
       "/frame/vue": sbconfig(vue),
@@ -172,7 +189,23 @@ function nav() {
         },
       ],
     },
-    { text: "后端", link: "/end/node/nestjs实践教程" },
+    {
+      text: "后端",
+      items: [
+        {
+          text: "node",
+          link: "/end/node/nestjs实践教程",
+        },
+        {
+          text: "数据库",
+          link: "/end/database/mongoose",
+        },
+        {
+          text: "服务器",
+          link: "/end/os/centos操作",
+        },
+      ],
+    },
     {
       text: "框架",
       items: [
