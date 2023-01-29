@@ -138,7 +138,6 @@ export default defineConfig({
 
   themeConfig: {
     nav: nav(),
-
     sidebar: {
       "/front/js": sbconfig(js),
       "/front/ts": sbconfig(ts),
@@ -155,11 +154,10 @@ export default defineConfig({
       "/other/": sbconfig(other),
     },
     algolia: {
-      appId: "8J64VVRP8K",
-      apiKey: "a18e2f4cc5665f6602c5631fd868adfd",
-      indexName: "vitepress",
+      appId: "3XX2MMEDL6",
+      apiKey: "e35524d98ec52d320b9c12087130747e",
+      indexName: "zantop",
     },
-
     lastUpdatedText: "最后更新",
     docFooter: {
       prev: "上一页",
