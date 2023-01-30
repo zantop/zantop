@@ -62,7 +62,7 @@
 
 .outline-link.hover,
 .outline-link.active {
-  color: #6666FF;
+  color: #6666FF!important;
 }
 
 ::-webkit-scrollbar-track-piece {
