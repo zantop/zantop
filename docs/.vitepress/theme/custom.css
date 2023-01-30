@@ -3,9 +3,6 @@
   flex-direction: column;
   align-items: center;
 }
-.vp-doc a:hover{
-    
-}
 #app .is-home:after {
   content: "";
   position: absolute;
@@ -49,7 +46,7 @@
   --vp-c-green-light: #6666FF;
   --vp-c-brand: #6666FF;
   --vp-c-brand-dark:#FF6600;
-  
+  --vp-c-text-1:#6666FF;
   /* --vp-c-brand-light: #c880f9;
   --vp-c-brand-lighter: #9499ff;
   --vp-c-brand-lightest: #bcc0ff;
@@ -61,7 +58,6 @@
   --vp-nav-height-desktop: 65px;
   --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #bd34fe 30%, #41d1ff); */
 }
-
 ::-webkit-scrollbar-track-piece {
   -webkit-border-radius: 0
 }
