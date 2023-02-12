@@ -12,7 +12,7 @@
   },
   "devDependencies": {
     "chalk": "^5.2.0",
-    "vitepress": "^1.0.0-alpha.35",
+    "vitepress": "^1.0.0-alpha.45",
     "vue": "^3.2.45"
   }
 }

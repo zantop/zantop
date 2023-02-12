@@ -45,6 +45,7 @@ const eng = [
   [
     "npm",
     "/front/eng",
+    "git缩写命令",
     "git提交规范",
     "git自动化部署项目",
     "npm相关",
