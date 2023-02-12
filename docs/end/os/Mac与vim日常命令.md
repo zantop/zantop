@@ -3,6 +3,17 @@
 ## Mac 日常命令
 
 ```js
+复制 cmd + D
+剪切文字  cmd + X
+剪切文件 先 cmd + C  到目标文件 cmd + option + V
+
+全屏截图 cmd+shift+3
+自定义截图 cmd+shift+4
+截图或录屏 cmd+shift+5
+
+窗口截图 cmd+shift+4+空格
+
+
 ls          查看目录下的文件
 ls -l       查看目录下的文件,以列表形式
 ls -la      查看目录下的文件,隐藏的文件也可以查
