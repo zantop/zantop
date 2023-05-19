@@ -1,0 +1,1 @@
+import{_ as t,c as e,o as l,a as d}from"./app.c4aa1f4f.js";const m=JSON.parse('{"title":"git缩写命令","description":"","frontmatter":{},"headers":[],"relativePath":"front/eng/git缩写命令.md","lastUpdated":1676174870000}'),g={name:"front/eng/git缩写命令.md"},r=d("",2),i=[r];function n(a,s,y,x,c,f){return l(),e("div",null,i)}const p=t(g,[["render",n]]);export{m as __pageData,p as default};

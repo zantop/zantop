@@ -1,0 +1,1 @@
+import{_ as t,c as e,o as s,b as a}from"./app.c4aa1f4f.js";const u=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"front/js/作用域.md","lastUpdated":1673364519000}'),o={name:"front/js/作用域.md"},n=a("p",null,"作用域",-1),r=[n];function c(_,d,p,i,l,f){return s(),e("div",null,r)}const h=t(o,[["render",c]]);export{u as __pageData,h as default};

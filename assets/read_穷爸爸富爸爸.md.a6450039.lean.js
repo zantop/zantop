@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as a,b as s}from"./app.c4aa1f4f.js";const u=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"read/穷爸爸富爸爸.md","lastUpdated":null}'),o={name:"read/穷爸爸富爸爸.md"},r=s("p",null,"待读",-1),_=[r];function n(c,d,l,p,i,m){return a(),t("div",null,_)}const h=e(o,[["render",n]]);export{u as __pageData,h as default};

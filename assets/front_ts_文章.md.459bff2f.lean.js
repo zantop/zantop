@@ -1,0 +1,1 @@
+import{_ as t,c as e,o as r,a}from"./app.c4aa1f4f.js";const E=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"front/ts/文章.md","lastUpdated":1673364519000}'),o={name:"front/ts/文章.md"},p=a("",4),n=[p];function i(s,l,c,h,g,_){return r(),e("div",null,n)}const d=t(o,[["render",i]]);export{E as __pageData,d as default};

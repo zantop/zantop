@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as a,b as s}from"./app.c4aa1f4f.js";const u=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"read/技术人的管理之路.md","lastUpdated":null}'),_={name:"read/技术人的管理之路.md"},o=s("p",null,"待读",-1),r=[o];function n(c,d,l,p,i,m){return a(),t("div",null,r)}const h=e(_,[["render",n]]);export{u as __pageData,h as default};

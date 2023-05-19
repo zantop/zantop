@@ -1,0 +1,1 @@
+import{_ as d,c as t,o,a as c}from"./app.c4aa1f4f.js";const p=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"front/eng/设计颜色值.md","lastUpdated":1673417607000}'),b={name:"front/eng/设计颜色值.md"},r=c("",15),e=[r];function l(f,a,g,s,_,n){return o(),t("div",null,e)}const m=d(b,[["render",l]]);export{p as __pageData,m as default};

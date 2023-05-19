@@ -1,0 +1,1 @@
+import{_ as e,c as t,o,a as n}from"./app.c4aa1f4f.js";const f=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"end/node/nvm管理多版本node.md","lastUpdated":1673364519000}'),a={name:"end/node/nvm管理多版本node.md"},s=n("",8),l=[s];function r(d,c,_,i,p,m){return o(),t("div",null,l)}const h=e(a,[["render",r]]);export{f as __pageData,h as default};
