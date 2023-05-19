@@ -59,6 +59,7 @@ const eng = [
     "设计颜色值",
   ],
 ];
+const interview = [["面试", "/front/interview", "汇总",]];
 
 //-------------------- 后端 -------------------------------
 
@@ -119,19 +120,22 @@ const site = [["站点", "/site", "常用", "收藏"]];
 const my = [["关于", "/my", "关于","进阶要求"]];
 
 //-------------------- 读书 -------------------------------
-const other = [
+const read = [
   [
     "读书",
-    "/other/read",
+    "/read",
     "技术管理36讲",
     "技术人的管理之路",
     "10人以下小团队管理手册",
     "别让猴子跳回背上",
-    "穷爸爸富爸爸"
+    "穷爸爸富爸爸",
+    "职场沟通12讲",
+    "结构化思维",
   ],
-  ["面试", "/other/interview", "面试集合"],
 ];
-
+/**
+ * 自定义
+ */
 export default defineConfig({
   lang: "en-US",
   title: "ZANTOP",
@@ -147,6 +151,7 @@ export default defineConfig({
       "/front/ts": sbconfig(ts),
       "/front/css": sbconfig(css),
       "/front/eng": sbconfig(eng),
+      "/front/interview": sbconfig(interview),
       "/end/node": sbconfig(node),
       "/end/database": sbconfig(database),
       "/end/os": sbconfig(os),
@@ -155,7 +160,7 @@ export default defineConfig({
       "/frame/vue": sbconfig(vue),
       "/frame/flutter": sbconfig(flutter),
       "/my/": sbconfig(my),
-      "/other/": sbconfig(other),
+      "/read/": sbconfig(read),
     },
     algolia: {
       appId: "3XX2MMEDL6",
@@ -170,7 +175,10 @@ export default defineConfig({
     outlineTitle: "目录",
   },
 });
-
+/**
+ * 
+ * @returns 导航
+ */
 function nav() {
   return [
     {
@@ -188,6 +196,9 @@ function nav() {
         {
           text: "工程化",
           link: "/front/eng/git提交规范",
+        }, {
+          text: "面试",
+          link: "/front/interview/汇总",
         },
       ],
     },
@@ -206,6 +217,7 @@ function nav() {
           text: "服务器",
           link: "/end/os/centos操作",
         },
+
       ],
     },
     {
@@ -226,8 +238,8 @@ function nav() {
       ],
     },
     { text: "站点", link: "/site/常用" },
+    { text: "读书", link: "/read/技术管理36讲" },
     { text: "我的", link: "/my/关于" },
-    { text: "读书", link: "/other/read/技术管理36讲" },
   ];
 }
 
